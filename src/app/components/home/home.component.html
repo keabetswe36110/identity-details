@@ -1,0 +1,21 @@
+<div class="flex main center-center column full-width full-height ">
+    <div class="inner flex center-center column gap-1em">
+        <img class="picture" src="../../../assets/SA-Home-Affairs.jpg" alt="SA-Home-Affairs">
+
+        <form class="example-form" #idForm="ngForm">
+            <mat-form-field class="example-full-width width-500 input">
+                <mat-label >identity Number:</mat-label>
+                <input type="text" matInput [(ngModel)]="inputData.id" placeholder="Ex. 92457..." name="identity">
+                <mat-error *ngIf="inputData.id.toString().length != 13">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error>
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+        </form>
+    
+        <button mat-raised-button class="width-100" color="accent" (click)="idCheck()">submit</button>
+    </div>
+ 
+</div>
